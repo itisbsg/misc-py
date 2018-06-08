@@ -18,8 +18,7 @@ class List:
 
     # Insert at the tail
     def insert(self, d):
-        if self.head is None:
-            self.head = Node(d)
+        if self.head is None: self.head = Node(d)
         else:
             t = self.head
             while t.next is not None:
@@ -29,8 +28,7 @@ class List:
 
     # Insert at head
     def insertHead(self, d):
-        if self.head is None:
-            self.head = Node(d)
+        if self.head is None: self.head = Node(d)
         else:
             n = Node(d)
             n.next = self.head
@@ -43,8 +41,7 @@ class List:
 
     # Delete the node that head is pointing to
     def deleteHead(self):
-        if self.head is None:
-            return
+        if self.head is None: return
         else:
             self.head = self.head.next
 
@@ -78,8 +75,7 @@ class List:
         print
 
     def reverse(self):
-        if self.head is None:
-            return
+        if self.head is None: return
         t = self.head
         prev = None
         while t is not None:
@@ -129,8 +125,7 @@ def addList(l1, l2):
 addListRecurseHelp
 '''
 def addListRecurseHelp(l1, l2, l):
-    if l1 is None and l2 is None:
-        return 0
+    if l1 is None and l2 is None: return 0
 
     a = l1.data + l2.data + addListRecurseHelp(l1.next, l2.next, l)
     l.append(a%10)
